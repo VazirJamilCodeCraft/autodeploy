@@ -9,8 +9,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    mkdir -p $WORKSPACE/deploy
-                    cp index.html $WORKSPACE/deploy/
+                    sudo cp index.html /var/www/html/
                 '''
             }
         }
