@@ -9,7 +9,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    sudo cp index.html /var/www/html/
+                    mkdir -p $WORKSPACE/deploy
+                    cp index.html $WORKSPACE/deploy/
                 '''
             }
         }
