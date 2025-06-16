@@ -1,4 +1,3 @@
- 
 pipeline {
     agent any
     stages {
@@ -7,13 +6,12 @@ pipeline {
                 git credentialsId: 'github-token', url: 'https://github.com/VazirJamilCodeCraft/autodeploy.git'
             }
         }
-        stage('Deploy') {
+        stage('Deploy to Apache') {
             steps {
                 sh '''
-                    mkdir -p $WORKSPACE/deploy
-                    cp index.html $WORKSPACE/deploy/
+                    sudo cp index.html /var/www/html/index.html
+                    echo "Deployed to Apache document root"
                 '''
-                echo "Deployment copied to EC2 workspace folder."
             }
         }
     }
