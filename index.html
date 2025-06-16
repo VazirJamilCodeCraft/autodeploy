@@ -1,44 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello from Jammie!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jammie's Shop</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
-    #container {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1606813903144-e36d737dcaf8?auto=format&fit=crop&w=1500&q=80') center center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 15px 25px;
+      border-radius: 10px;
+    }
+
+    .section {
+      padding: 40px 20px;
       text-align: center;
     }
-    input, button {
-      padding: 0.5rem 1rem;
-      margin-top: 1rem;
+
+    .section h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .product {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 15px 0 5px;
+    }
+
+    .product p {
+      color: #777;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <h1>Hello jamil askari and malik abdullah </h1>
-    <input type="text" id="nameInput" placeholder="Enter your name">
-    <br>
-    <button onclick="sayHello()">Greet Me</button>
-    <p id="output"></p>
-  </div>
+  <header>
+    <h1>Jammie's Shop</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-  <script>
-    function sayHello() {
-      const name = document.getElementById('nameInput').value;
-      document.getElementById('output').textContent = `👋 Hello, ${name}! This is deployed with Jenkins.`;
-    }
-  </script>
+  <section class="hero">
+    <h2>Fresh Deals, Amazing Products!</h2>
+  </section>
+
+  <section class="section">
+    <h2>Featured Products</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://source.unsplash.com/250x180/?shoes" alt="Product 1">
+        <h3>Stylish Sneakers</h3>
+        <p>Rs. 2,499</p>
+      </div>
+      <div class="product">
+        <img src="https://source.unsplash.com/250x180/?watch" alt="Product 2">
+        <h3>Classic Watch</h3>
+        <p>Rs. 1,999</p>
+      </div>
+      <div class="product">
+        <img src="https://source.unsplash.com/250x180/?backpack" alt="Product 3">
+        <h3>Travel Backpack</h3>
+        <p>Rs. 3,299</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: #fff;">
+    <h2>About Us</h2>
+    <p>
+      Welcome to Jammie’s Shop – your one-stop store for premium, affordable products.
+      We deliver quality items at your doorstep across Pakistan. Start shopping now and enjoy fast delivery!
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jammie's Shop | Designed with ❤️ in Gilgit Baltistan</p>
+  </footer>
 </body>
 </html>
