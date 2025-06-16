@@ -9,8 +9,9 @@ pipeline {
         stage('Deploy to Apache') {
             steps {
                 sh '''
-                    sudo cp index.html /var/www/html/index.html
-                    echo "Deployed to Apache document root"
+                    echo "Deploying index.html to Apache root..."
+                    sudo /bin/cp index.html /var/www/html/index.html
+                    echo "Deployment done ✅"
                 '''
             }
         }
